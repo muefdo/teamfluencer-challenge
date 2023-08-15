@@ -7,12 +7,10 @@ import { useRouter } from "next/navigation";
 const List = () => {
   const router = useRouter();
   const [filteredUsers, setFilteredUsers] = useState(Users);
-  const [isVerified, setIsVerified] = useState(null);
+  const [isVerified, setIsVerified] = useState("");
   const [isVerifiedOpen, setIsVerifiedOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  console.log(isVerified);
 
   const handleReset = () => {
     setFilteredUsers(Users);
@@ -46,7 +44,7 @@ const List = () => {
 
       if (isVerified === "Not Verified") {
         filtered = filtered.filter((user) => user.tiktok.verified === false);
-      } else {
+      } else if (isVerified === "Verified") {
         filtered = filtered.filter((user) => user.tiktok.verified === true);
       }
 
@@ -58,10 +56,12 @@ const List = () => {
 
   // Toggle functions
   const toggleVerified = () => {
+    handleReset();
     setIsVerifiedOpen(!isVerifiedOpen);
   };
 
   const toggleDropdown = () => {
+    handleReset();
     setIsDropdownOpen(!isDropdownOpen);
   };
 
