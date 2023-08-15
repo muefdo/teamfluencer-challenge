@@ -42,10 +42,12 @@ const List = () => {
         filtered = filtered.filter((user) => user.gender === selectedFilter);
       }
 
-      if (isVerified === "Not Verified") {
+     if (isVerified === "Not Verified") {
         filtered = filtered.filter((user) => user.tiktok.verified === false);
       } else if (isVerified === "Verified") {
         filtered = filtered.filter((user) => user.tiktok.verified === true);
+      } else{
+        filtered = filtered;
       }
 
       setFilteredUsers(filtered);
@@ -56,12 +58,10 @@ const List = () => {
 
   // Toggle functions
   const toggleVerified = () => {
-    handleReset();
     setIsVerifiedOpen(!isVerifiedOpen);
   };
 
   const toggleDropdown = () => {
-    handleReset();
     setIsDropdownOpen(!isDropdownOpen);
   };
 
