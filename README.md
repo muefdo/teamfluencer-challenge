@@ -6,10 +6,11 @@
 * TailwindCSS
 * NextJS
 
-Projeyi deploy ettim bu linkten canlı ulaşabilirsiniz Proje:https://teamfluencer-challenge.vercel.app/
+Projeyi deploy ettim bu linkten canlı olarak test edebilirsiniz
 
-Localinizde çalıştırmak için
+Link:https://teamfluencer-challenge.vercel.app/
 
-1. git clone
-2. npm install
-3. npm run dev
+Nasıl Kullanılır?
+1. git clone = Localinize klonlayın
+2. npm install = Gereklilikleri Yükleyin
+3. npm run dev = Development Serverı Başlatın (NextJS)
